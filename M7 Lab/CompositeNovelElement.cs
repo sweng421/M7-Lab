@@ -5,14 +5,32 @@ namespace M7_Lab
 {
     public abstract class CompositeNovelElement: NovelElement
     {
-        IList<NovelElement> elements;
+        private List<NovelElement> elements = new List<NovelElement>();
         public virtual void Save(NovelElement novelElement)
         {
             elements.Add(novelElement);
+            Console.WriteLine(novelElement + " has been saved");
         }
-        public abstract NovelElement Retrieve(NovelElement novelElement);
+        public virtual void Retrieve(NovelElement novelElement)
+        {
+            if (novelElement != null)
+                Console.WriteLine(this.ToString() + " has been retrieved\n");
+            else
+                Console.WriteLine("Element does not exist\n");
+        }
         public abstract void View(NovelElement novelElement);
         public abstract void Edit(NovelElement novelElement);
-        public abstract void Delete(NovelElement novelElement);
+        public void Delete(NovelElement novelElement)
+        {
+            for (int i = 0; i < elements.Count; i++)
+            {
+                if (elements[i] == novelElement)
+                    elements.RemoveAt(i);          
+            }
+        }
+        public void SetElement()
+        {
+            Console.WriteLine("Feature not supported\n");
+        }
     }
 }

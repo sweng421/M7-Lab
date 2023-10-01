@@ -1,12 +1,51 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace M7_Lab
 {
-    public class Image
+    public class Image : NovelElement
     {
+        string image;
+
+        public Image (string image)
+        {
+            this.image = image;
+        }
+
+        public void Delete(NovelElement novelElement)
+        {
+            Console.WriteLine("Feature not supported\n");
+        }
+
+        public void Edit(NovelElement novelElement)
+        {
+            novelElement.SetElement();
+        }
+
+        public void Retrieve(NovelElement novelElement)
+        {
+            Console.WriteLine("Image \"" + image + "\" was retrieved\n");
+        }
+
+        public void Save(NovelElement novelElement)
+        {
+            Console.WriteLine("Feature not supported\n");
+        }
+
+        public void SetElement()
+        {
+            Console.WriteLine("\nCharacter has been edited\n");
+        }
+
+        public void View(NovelElement novelElement)
+        {
+            Console.WriteLine("\n" + image + "\n");
+        }
+
+        public override string ToString()
+        {
+            int val = GetHashCode();
+
+            return ("Image " + val.ToString());
+        }
     }
 }

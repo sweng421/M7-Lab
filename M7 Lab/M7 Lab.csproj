@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archive.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="CompositeNovelElement.cs" />
     <Compile Include="CompositeNovelElements\Column.cs" />
